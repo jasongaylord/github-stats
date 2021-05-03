@@ -305,6 +305,9 @@ Languages:
                      + owned_repos.get("nodes", []))
 
             for repo in repos:
+                if(repo is None):
+                    continue
+                    
                 name = repo.get("nameWithOwner")
                 if name in self._repos or name in self._exclude_repos:
                     continue
